@@ -60,13 +60,13 @@ const SignIn = () => {
             id="userPassword"
             onChange = {(event) => onChangeHandler(event)}
           />
-          <button className="bg-green-400 hover:bg-green-500 w-full py-2 text-white" onClick = {(event) => {signInWithEmailAndPasswordHandler(event, email, password)}}>
+          <button className="bg-red-500 hover:bg-red-400 w-full py-2 text-white" onClick = {(event) => {signInWithEmailAndPasswordHandler(event, email, password)}}>
             Sign in
           </button>
         </form>
         <p className="text-center my-3">or</p>
         <button
-          className="bg-red-500 hover:bg-red-600 w-full py-2 text-white"
+          className="bg-gray-500 hover:bg-gray-600 w-full py-2 text-white"
           onClick={() => {
             signInWithGoogle();
           }}

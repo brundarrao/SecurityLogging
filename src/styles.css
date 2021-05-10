@@ -592,6 +592,12 @@ video {
   background-color: rgba(56, 161, 105, var(--bg-opacity));
 }
 
+.btn.btn-prim{
+  --bg-opacity: 1;
+  background-color: #63b3ed;
+  background-color: rgba(99, 179, 237, var(--bg-opacity));
+}
+
 .container {
   width: 100%;
 }

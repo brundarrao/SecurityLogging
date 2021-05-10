@@ -53,7 +53,7 @@ const SignUp = () => {
             className="my-1 p-1 w-full "
             name="displayName"
             value={displayName}
-            placeholder="E.g: Faruq"
+            placeholder="E.g: ProjectB5"
             id="displayName"
             onChange={event => onChangeHandler(event)}
           />
@@ -65,7 +65,7 @@ const SignUp = () => {
             className="my-1 p-1 w-full"
             name="userEmail"
             value={email}
-            placeholder="E.g: faruq123@gmail.com"
+            placeholder="E.g: finalyear@gmail.com"
             id="userEmail"
             onChange={event => onChangeHandler(event)}
           />
@@ -82,7 +82,7 @@ const SignUp = () => {
             onChange={event => onChangeHandler(event)}
           />
           <button
-            className="bg-green-400 hover:bg-green-500 w-full py-2 text-white"
+            className="bg-red-500 hover:bg-red-400 w-full py-2 text-white"
             onClick={event => {
               createUserWithEmailAndPasswordHandler(event, email, password);
             }}
@@ -99,7 +99,7 @@ const SignUp = () => {
               console.error("Error signing in with Google", error);
             }
           }}
-          className="bg-red-500 hover:bg-red-600 w-full py-2 text-white"
+          className="bg-gray-600 hover:bg-gray-400 w-full py-2 text-white"
         >
           Sign In with Google
         </button>

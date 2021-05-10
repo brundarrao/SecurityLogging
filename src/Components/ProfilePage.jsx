@@ -34,15 +34,16 @@ class App extends Component {
             <div className="App">
                 <header className="App-header">
                     <React.Fragment>
-                        <h1>Cloud Logging on Rollbar Dashboard</h1>
+                        {this.logIn()}
+                        <h1><center>Cloud Logging on Rollbar Dashboard</center></h1>
                         <h3>Error test button will shut the app down and other buttons will send log entry to rollbar cloud</h3>
-                        <button className="btn btn-primary" id='rollbar-info' onClick={ this.logInfo }>Click to update Logs</button>
-                        <button className="btn btn-primary" id='rollbar-info-2' onClick={ this.logInfo2 }>{user.displayName}</button>
-                        <button className="btn btn-primary" id='throw-error' onClick={ this.throwError }>Error Test</button>
+                        <button className="btn btn-prim" id='rollbar-info' onClick={ this.logInfo }>Click to update Logs</button>
+                        <button className="btn btn-prim" id='rollbar-info-2' onClick={ this.logInfo2 }>{user.displayName}</button>
+                        <button className="btn btn-prim" id='throw-error' onClick={ this.throwError }>Error Test</button>
                         <p>Hello, {user.displayName}</p>
                     </React.Fragment>
                 </header>
-                <button className = "w-full py-3 bg-red-600 mt-4 text-white" onClick = {() => {auth.signOut()}}>Sign out</button>
+                <button className = "w-full py-3 bg-pink-600 mt-4 text-white" onClick = {() => {auth.signOut(); this.logOut()}}>Sign out</button>
             </div>
         );
     }
@@ -59,6 +60,16 @@ class App extends Component {
     throwError() {
         // Example error, which will be reported to rollbar.
         throw new Error('react test error');
+    }
+
+    logIn(){
+        // Second Example log event using the rollbar object.
+        this.state.rollbar.info(this.props.user.displayName + ' has logged in')
+    }
+
+    logOut(){
+        // Second Example log event using the rollbar object.
+        this.state.rollbar.info(this.props.user.displayName + ' has logged out')
     }
 }
 
